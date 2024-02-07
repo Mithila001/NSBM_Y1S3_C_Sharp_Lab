@@ -4,43 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_2024_02_07_Q2
+namespace Lab_2024_02_07_Q3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            BankAccount account1 = new BankAccount();
-            Console.Write("Enter the Account number: ");
-            account1.accountNumber = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Deposite amount: ");
-            int depositeAmount = Convert.ToInt32(Console.ReadLine());
-            account1.sendMoney(depositeAmount);
+            TemprestureTraker tempWeek1 = new TemprestureTraker();
+            for (int i = 0; i < 7; i++)
+            {
+                Console.Write($"Enter the week {i+1} temperature: ");
+                tempWeek1.dailyTemp[i] = int.Parse(Console.ReadLine());
+            }
+           
+            Console.Write("Week temperature\n");
 
-            
-
-            /*account1.accountNumber = accNumber;*/
-            /*account1.accountBalance = depositeAmount;*/
-
-            Console.WriteLine("Your account number is: " + account1.accountNumber);
-            Console.WriteLine("Your account balance is: "+ account1.accountBalance);
-            Console.ReadLine();
-
-            
+            for (int j = 0; j < 7; j++)
+            {
+                Console.WriteLine($"Day {j + 1}: {tempWeek1.dailyTemp[j]}");
+            }
 
         }
     }
 
-    public class BankAccount
+    public class TemprestureTraker
     {
-        public int accountNumber {  get; set; }
-        public int accountBalance { get; set; }
-
-        public void sendMoney(int amount)
-        {
-            accountBalance = amount;
-        }
-        
+        public int[] dailyTemp = new int[7]; 
 
     }
 }
