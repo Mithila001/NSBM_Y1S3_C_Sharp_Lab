@@ -4,32 +4,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab_2024_02_07_Q3
+namespace Lab_2024_02_07_Q4
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            TemprestureTraker tempWeek1 = new TemprestureTraker();
-            for (int i = 0; i < 7; i++)
-            {
-                Console.Write($"Enter the week {i+1} temperature: ");
-                tempWeek1.dailyTemp[i] = int.Parse(Console.ReadLine());
-            }
-           
-            Console.Write("Week temperature\n");
+           Product product = new Product("Car",30000000);
 
-            for (int j = 0; j < 7; j++)
-            {
-                Console.WriteLine($"Day {j + 1}: {tempWeek1.dailyTemp[j]}");
-            }
+           Console.WriteLine(product.ProductName +" Rs."+ product.Price);
+           
 
         }
     }
 
-    public class TemprestureTraker
+    public class Product
     {
-        public int[] dailyTemp = new int[7]; 
+        public string ProductName;
+        public int Price;
 
+        public Product(string productName, int price)
+        {
+            ProductName = productName;
+            Price = price;
+        }
     }
 }
