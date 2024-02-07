@@ -84,7 +84,7 @@ namespace Lab_2024_02_31_LabSheet_1_Q7
                 if (yesOrNo == "y" || yesOrNo == "Y")
                 {
                     accountBalance -= roundValue;
-                    Console.WriteLine("Success");
+                    Console.WriteLine("Success!");
                 }
             }
             else
